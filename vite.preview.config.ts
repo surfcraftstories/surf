@@ -1,0 +1,8 @@
+import vinext from "vinext";
+import { defineConfig } from "vite";
+import { sites } from "./build/sites-vite-plugin";
+
+export default defineConfig({
+  plugins: [vinext(), sites()],
+  server: { host: "127.0.0.1", port: 3000 },
+});
