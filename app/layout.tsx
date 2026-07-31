@@ -3,11 +3,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://surfcraftstories.pl"),
-  title: { default:"Surfcraftstories — ręcznie wyplatane akcesoria z paracordu", template:"%s | Surfcraftstories" },
+  title: { default:"Surfcraftstories - ręcznie wyplatane akcesoria z paracordu", template:"%s | Surfcraftstories" },
   description:"Ręcznie wyplatane breloki, phone strapy, smycze i indywidualne projekty z paracordu — z zajawki do surfskate’u i potrzeby tworzenia.",
   keywords:["ręcznie robione akcesoria z paracordu","breloki z paracordu","phone strapy","personalizowane akcesoria","Surfcraftstories"],
   alternates:{canonical:"/"},
-  openGraph:{type:"website",url:"https://surfcraftstories.pl/",locale:"pl_PL",siteName:"Surfcraftstories",title:"Surfcraftstories — ręcznie wyplatane. Po Twojemu.",description:"Kolor, splot i własny charakter. Poznaj autorskie akcesoria z paracordu.",images:[{url:"https://surfcraftstories.pl/surfcraftstories-logo.png?v=2",secureUrl:"https://surfcraftstories.pl/surfcraftstories-logo.png?v=2",width:1254,height:1254,type:"image/png",alt:"Logo Surfcraftstories"}]},
+  openGraph:{type:"website",url:"https://surfcraftstories.pl/",locale:"pl_PL",siteName:"Surfcraftstories",title:"Surfcraftstories - ręcznie wyplatane. Po Twojemu.",description:"Kolor, splot i własny charakter. Poznaj autorskie akcesoria z paracordu.",images:[{url:"https://surfcraftstories.pl/surfcraftstories-logo.png?v=2",secureUrl:"https://surfcraftstories.pl/surfcraftstories-logo.png?v=2",width:1254,height:1254,type:"image/png",alt:"Logo Surfcraftstories"}]},
   twitter:{card:"summary_large_image",title:"Surfcraftstories",description:"Ręcznie wyplatane akcesoria z paracordu.",images:["https://surfcraftstories.pl/surfcraftstories-logo.png?v=2"]},
   icons:{icon:"/surfcraftstories-logo.png",apple:"/surfcraftstories-logo.png"},
 };
