@@ -134,5 +134,9 @@ body{background:linear-gradient(180deg,#fffaf6 0%,#f5efe9 30%,#f1ecf6 100%)}
 .swatches button span{height:56px}.color-lab aside{padding:18px}.chosen-cords{min-height:44px;margin:12px 0}.chosen-cords i{width:46%;height:16px}
 .swatches button{padding-bottom:8px}.swatches button b,.swatches button small{margin:6px 10px 0}
 @media(max-width:720px){.swatches button span{height:54px}.chosen-cords i{width:46%}}
+
+/* Czytelniejszy pasek etapow pod sekcja powitalna */
+.route{padding-block:19px;font-size:14px}
+@media(max-width:720px){.route{padding-block:18px;font-size:12px}}
 .site-header{height:64px}.site-header .nav-cta{padding:10px 15px}.hero{min-height:calc(100vh - 64px)}html{scroll-padding-top:68px}.gallery-modal{z-index:100;padding:12px}.gallery-dialog{max-height:calc(100vh - 24px)}.gallery-close{top:18px;right:18px}
 @media(max-width:720px){.site-header{height:60px}.site-header nav{top:60px}.menu-toggle{min-width:88px;padding:9px 15px;border:2px solid var(--ink);border-radius:999px;background:linear-gradient(135deg,var(--coral),var(--orange));color:var(--ink);font:900 12px/1 var(--mono);letter-spacing:.08em;box-shadow:4px 4px 0 #a77bc6;cursor:pointer;transition:transform .18s,box-shadow .18s}.menu-toggle:active{transform:translate(2px,2px);box-shadow:2px 2px 0 #a77bc6}}
