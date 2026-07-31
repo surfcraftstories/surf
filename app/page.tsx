@@ -144,7 +144,7 @@ const newKeyringProjects = [
   { id:"SCS-704", type:"Breloki", title:"Good Vibes", src:"/projects/breloki/wszystkie/2026/04.png", alt:"Miętowo-fioletowy brelok z konikiem morskim i literkami", colors:["#58c5b2","#7952b8","#d7b17d"], note:"Mięta i fiolet z drewnianymi literkami i konikiem morskim.", tone:"violet", fit:"cover" },
   { id:"SCS-705", type:"Breloki", title:"Toni Bow", src:"/projects/breloki/wszystkie/2026/05.png", alt:"Turkusowo-fioletowy brelok z kokardą, kwiatkiem i imieniem Toni", colors:["#1ab5ac","#7352ba","#8cae35"], note:"Personalizowany brelok z kokardą i zielonym kwiatkiem.", tone:"cyan", fit:"cover" },
   { id:"SCS-706", type:"Breloki", title:"Black Eight", src:"/projects/breloki/wszystkie/2026/06.png", alt:"Czarno-biały brelok z kostką i kulą numer osiem", colors:["#111111","#ededeb","#777777"], note:"Monochromatyczny brelok z detalami inspirowanymi grą.", tone:"blue", fit:"cover" },
-  { id:"SCS-707", type:"Breloki", title:"Kazi Heart", src:"/projects/breloki/wszystkie/2026/07.png", alt:"Różowo-niebieski brelok z kokardą, sercem i imieniem Kazi", colors:["#168db9","#e9a3c3","#ef6f9c"], note:"Niebiesko-różowa personalizacja z sercem i kokardą.", tone:"pink", fit:"cover" },
+  { id:"SCS-707", type:"Breloki", title:"Kaz Heart", src:"/projects/breloki/wszystkie/2026/07.png", alt:"Różowo-niebieski brelok z kokardą, sercem i imieniem Kaz", colors:["#168db9","#e9a3c3","#ef6f9c"], note:"Niebiesko-różowa personalizacja z sercem i kokardą.", tone:"pink", fit:"cover" },
   { id:"SCS-708", type:"Breloki", title:"Color Ropes", src:"/projects/breloki/wszystkie/2026/08.png", alt:"Wielokolorowy brelok z czerwonym, niebieskim i neonowym sznurkiem", colors:["#e32b37","#2175bd","#d5e033"], note:"Surowa, sportowa forma w mocnych kontrastowych kolorach.", tone:"orange", fit:"cover" },
   { id:"SCS-709", type:"Breloki", title:"Pawan Bee", src:"/projects/breloki/wszystkie/2026/09.png", alt:"Żółto-błękitny brelok z pszczółką i imieniem Pawan", colors:["#f1dd20","#9fcde0","#e6b62a"], note:"Słoneczny brelok z pszczółką i personalizowanym napisem.", tone:"orange", fit:"cover" },
   { id:"SCS-710", type:"Breloki", title:"Beach Teddy", src:"/projects/breloki/wszystkie/2026/10.png", alt:"Niebiesko-różowy brelok z klapkami i misiem", colors:["#168bc4","#e7a0c3","#b68c6e"], note:"Plażowy zestaw z niebieskimi klapkami i zabawnym misiem.", tone:"blue", fit:"cover" },
@@ -160,6 +160,8 @@ const newKeyringProjects = [
   { id:"SCS-720", type:"Breloki", title:"Beach Ball", src:"/projects/breloki/wszystkie/2026/20.png", alt:"Różowo-błękitny brelok z piłką plażową, kwiatkiem i samolotem", colors:["#df758e","#25a4cf","#efd693"], note:"Wakacyjny brelok z piłką plażową i pastelowymi detalami.", tone:"pink", fit:"cover" },
   { id:"SCS-721", type:"Breloki", title:"Loop Duo", src:"/projects/breloki/wszystkie/2026/21.png", alt:"Dwa turkusowo-różowe krótkie breloki z pętlami", colors:["#10a89f","#e9449b","#8268bb"], note:"Dwa wygodne breloki-pętle w dopasowanej kolorystyce.", tone:"cyan", fit:"cover" },
 ];
+const keyringDisplayOrder = [...newKeyringProjects];
+[keyringDisplayOrder[6],keyringDisplayOrder[12]]=[keyringDisplayOrder[12],keyringDisplayOrder[6]];
 const octopusProjects = [
   { id:"SCS-125", type:"Breloki", collection:"Kolekcja Ośmiorniczka", title:"Ośmiorniczka - kolorowe trio", src:"/projects/breloki/osmiorniczka/04.png", alt:"Trzy wielokolorowe breloki Ośmiorniczka ułożone na surowym jasnym tle", colors:["#13aeb0","#f39b12","#151515"], note:"Trzy różne kompozycje pokazujące, jak zmiana kolorów nadaje każdej Ośmiorniczce inny charakter.", tone:"cyan", fit:"cover" },
   { id:"SCS-122", type:"Breloki", collection:"Kolekcja Ośmiorniczka", title:"Ośmiorniczka - przy plecaku", src:"/projects/breloki/osmiorniczka/01.png", alt:"Kolorowy brelok Ośmiorniczka przypięty do czarnego plecaka", colors:["#f2a51a","#e93d35","#16a7b8"], note:"Kolorowy brelok pokazany w codziennym użyciu - przypięty do zamka plecaka.", tone:"orange", fit:"cover" },
@@ -170,7 +172,7 @@ const octopusProjects = [
   { id:"SCS-128", type:"Breloki", collection:"Kolekcja Ośmiorniczka", title:"Ośmiorniczka - black backpack", src:"/projects/breloki/osmiorniczka/07.png", alt:"Wielokolorowy brelok Ośmiorniczka przypięty do kieszeni czarnego plecaka", colors:["#f2a51a","#7947b9","#ed3e38"], note:"Mocne kolory, które wyraźnie odcinają się od czarnego plecaka.", tone:"violet", fit:"cover" },
   { id:"SCS-129", type:"Breloki", collection:"Kolekcja Ośmiorniczka", title:"Ośmiorniczka - canvas tote", src:"/projects/breloki/osmiorniczka/08.png", alt:"Kolorowy brelok Ośmiorniczka przy jasnej płóciennej torbie noszonej na ramieniu", colors:["#18a7a4","#f47b22","#1e4c94"], note:"Lekki, kolorowy detal przy jasnej torbie noszonej na co dzień.", tone:"sand", fit:"cover" },
 ];
-const portfolioProjects = [...projects.filter(project=>project.type!=="Phone strapy"), ...newPhoneStrapProjects, ...newKeyringProjects, ...octopusProjects];
+const portfolioProjects = [...projects.filter(project=>project.type!=="Phone strapy"), ...newPhoneStrapProjects, ...keyringDisplayOrder, ...octopusProjects];
 const filters = ["Breloki","Phone strapy","Phone strapy crossbody","Bransoletki","Inne"];
 const keyringCollections = ["Wszystkie breloki","Kolekcja Ośmiorniczka"];
 const cordColors = [
