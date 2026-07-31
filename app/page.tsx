@@ -162,6 +162,7 @@ const newKeyringProjects = [
 ];
 const keyringDisplayOrder = [...newKeyringProjects];
 [keyringDisplayOrder[6],keyringDisplayOrder[12]]=[keyringDisplayOrder[12],keyringDisplayOrder[6]];
+[keyringDisplayOrder[5],keyringDisplayOrder[14]]=[keyringDisplayOrder[14],keyringDisplayOrder[5]];
 const octopusProjects = [
   { id:"SCS-125", type:"Breloki", collection:"Kolekcja Ośmiorniczka", title:"Ośmiorniczka - kolorowe trio", src:"/projects/breloki/osmiorniczka/04.png", alt:"Trzy wielokolorowe breloki Ośmiorniczka ułożone na surowym jasnym tle", colors:["#13aeb0","#f39b12","#151515"], note:"Trzy różne kompozycje pokazujące, jak zmiana kolorów nadaje każdej Ośmiorniczce inny charakter.", tone:"cyan", fit:"cover" },
   { id:"SCS-122", type:"Breloki", collection:"Kolekcja Ośmiorniczka", title:"Ośmiorniczka - przy plecaku", src:"/projects/breloki/osmiorniczka/01.png", alt:"Kolorowy brelok Ośmiorniczka przypięty do czarnego plecaka", colors:["#f2a51a","#e93d35","#16a7b8"], note:"Kolorowy brelok pokazany w codziennym użyciu - przypięty do zamka plecaka.", tone:"orange", fit:"cover" },
