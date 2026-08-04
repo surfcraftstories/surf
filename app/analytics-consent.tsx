@@ -10,42 +10,10 @@ declare global {
   interface Window {
     dataLayer: unknown[];
     gtag: (...args: unknown[]) => void;
-    surfcraftAnalyticsConfigured?: boolean;
-  }
-}
-
-function setupAnalytics(consent: Exclude<Consent, null>) {
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = window.gtag || function gtag(...args: unknown[]) { window.dataLayer.push(args); };
-
-  window.gtag("consent", "default", {
-    analytics_storage: "denied",
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied",
-  });
-
-  if (consent === "granted") {
-    window.gtag("consent", "update", { analytics_storage: "granted" });
-  }
-
-  if (!document.querySelector(`script[data-ga4="${MEASUREMENT_ID}"]`)) {
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${MEASUREMENT_ID}`;
-    script.dataset.ga4 = MEASUREMENT_ID;
-    document.head.appendChild(script);
-  }
-
-  if (!window.surfcraftAnalyticsConfigured) {
-    window.gtag("js", new Date());
-    window.gtag("config", MEASUREMENT_ID, { anonymize_ip: true });
-    window.surfcraftAnalyticsConfigured = true;
   }
 }
 
 function enableAnalytics(sendPageView = false) {
-  setupAnalytics("granted");
   window.gtag("consent", "update", {
     analytics_storage: "granted",
     ad_storage: "denied",
@@ -85,7 +53,8 @@ export default function AnalyticsConsent() {
     const saved = window.localStorage.getItem(CONSENT_KEY) as Consent;
     const valid = saved === "granted" || saved === "denied" ? saved : null;
     setConsent(valid);
-    setupAnalytics(valid === "granted" ? "granted" : "denied");
+    if (valid === "granted") enableAnalytics(true);
+    if (valid === "denied") disableAnalytics();
     setReady(true);
   }, []);
 
