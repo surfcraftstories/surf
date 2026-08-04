@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import "./globals.css";
+import AnalyticsConsent from "./analytics-consent";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://surfcraftstories.pl"),
@@ -12,4 +13,4 @@ export const metadata: Metadata = {
   icons:{icon:"/surfcraftstories-logo.png",apple:"/surfcraftstories-logo.png"},
 };
 const structuredData={"@context":"https://schema.org","@type":"Brand","name":"Surfcraftstories","description":"Autorska marka ręcznie wyplatanych akcesoriów z paracordu, inspirowana surfskatem, kolorem i indywidualnym stylem.","logo":"https://surfcraftstories.pl/surfcraftstories-logo.png","url":"https://surfcraftstories.pl/","makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Product","name":"Ręcznie wyplatane breloki z paracordu"}},{"@type":"Offer","itemOffered":{"@type":"Product","name":"Ręcznie wyplatane phone strapy"}},{"@type":"Offer","itemOffered":{"@type":"Product","name":"Indywidualne projekty z paracordu"}}]};
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="pl"><body>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData)}}/></body></html>}
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="pl"><body>{children}<AnalyticsConsent/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData)}}/></body></html>}
