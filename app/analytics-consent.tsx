@@ -10,18 +10,25 @@ declare global {
   interface Window {
     dataLayer: unknown[];
     gtag: (...args: unknown[]) => void;
+    surfcraftAnalyticsConfigured?: boolean;
   }
 }
 
-function enableAnalytics() {
+function setupAnalytics(consent: Exclude<Consent, null>) {
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function gtag(...args: unknown[]) { window.dataLayer.push(args); };
-  window.gtag("consent", "update", {
-    analytics_storage: "granted",
+
+  window.gtag("consent", "default", {
+    analytics_storage: "denied",
     ad_storage: "denied",
     ad_user_data: "denied",
     ad_personalization: "denied",
   });
+
+  if (consent === "granted") {
+    window.gtag("consent", "update", { analytics_storage: "granted" });
+  }
+
   if (!document.querySelector(`script[data-ga4="${MEASUREMENT_ID}"]`)) {
     const script = document.createElement("script");
     script.async = true;
@@ -29,8 +36,28 @@ function enableAnalytics() {
     script.dataset.ga4 = MEASUREMENT_ID;
     document.head.appendChild(script);
   }
-  window.gtag("js", new Date());
-  window.gtag("config", MEASUREMENT_ID, { anonymize_ip: true });
+
+  if (!window.surfcraftAnalyticsConfigured) {
+    window.gtag("js", new Date());
+    window.gtag("config", MEASUREMENT_ID, { anonymize_ip: true });
+    window.surfcraftAnalyticsConfigured = true;
+  }
+}
+
+function enableAnalytics(sendPageView = false) {
+  setupAnalytics("granted");
+  window.gtag("consent", "update", {
+    analytics_storage: "granted",
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+  });
+  if (sendPageView) {
+    window.gtag("event", "page_view", {
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }
 }
 
 function disableAnalytics() {
@@ -58,7 +85,7 @@ export default function AnalyticsConsent() {
     const saved = window.localStorage.getItem(CONSENT_KEY) as Consent;
     const valid = saved === "granted" || saved === "denied" ? saved : null;
     setConsent(valid);
-    if (valid === "granted") enableAnalytics();
+    setupAnalytics(valid === "granted" ? "granted" : "denied");
     setReady(true);
   }, []);
 
@@ -66,7 +93,7 @@ export default function AnalyticsConsent() {
     window.localStorage.setItem(CONSENT_KEY, next);
     setConsent(next);
     setSettingsOpen(false);
-    if (next === "granted") enableAnalytics(); else disableAnalytics();
+    if (next === "granted") enableAnalytics(true); else disableAnalytics();
   }
 
   if (!ready) return null;
