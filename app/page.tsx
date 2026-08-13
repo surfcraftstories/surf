@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 const projects = [
+  { id:"SCS-805", type:"Bransoletki", title:"Fruity Trio", src:"/projects/bransoletki/2026/19.png", alt:"Trzy różowe bransoletki z paracordu z zawieszkami truskawki, arbuza i wiśni", colors:["#d987a7","#cf2634","#287344"], note:"Trzy owocowe bransoletki — pamiątka wspólnego wyjazdu i chwil, które zostają na dłużej.", tone:"pink", fit:"cover" },
   { id:"SCS-804", type:"Bransoletki", title:"Dice Trio", src:"/projects/bransoletki/2026/18.png", alt:"Trzy czarno-białe męskie bransoletki z paracordu z kośćmi do gry", colors:["#111111","#f2f1ed","#8b8781"], note:"Trzy męskie bransoletki z kośćmi — pamiątka wspólnego wyjazdu i historii, która łączy.", tone:"cyan", fit:"cover" },
   { id:"SCS-336", type:"Phone strapy crossbody", title:"Purple Bloom", src:"/projects/crossbody/2026/36.png", alt:"Fioletowo-różowy phone strap crossbody z turkusowym splotem i kwiatowymi detalami", colors:["#6d36aa","#df3a9b","#07a3b2"], note:"Fioletowo-różowy strap z turkusowym splotem i kolorowymi, kwiatowymi detalami.", tone:"violet", fit:"contain" },
   { id:"SCS-330", type:"Phone strapy crossbody", title:"Pink Current - produkt", src:"/projects/crossbody/2026/30.png", alt:"Różowo-turkusowy phone strap crossbody ułożony na betonowym tle", colors:["#f23f98","#07899e","#f0c51d"], note:"Pełny widok różowo-turkusowego strapa, splotu oraz mocowania do telefonu.", tone:"pink", fit:"contain" },

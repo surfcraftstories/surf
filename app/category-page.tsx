@@ -67,6 +67,7 @@ export const categories: CategoryContent[] = [
     price: "Orientacyjnie 20–25 PLN",
     features: ["Rozmiar na wymiar", "Lekka i trwała", "Unikalne zestawienia"],
     images: [
+      { src: "/projects/bransoletki/2026/19.png", alt: "Trzy różowe bransoletki z paracordu z zawieszkami truskawki, arbuza i wiśni", label: "Fruity Trio" },
       { src: "/projects/bransoletki/2026/18.png", alt: "Trzy czarno-białe męskie bransoletki z paracordu z kośćmi do gry", label: "Dice Trio" },
       { src: "/projects/bransoletki/2026/15.png", alt: "Różowa bransoletka z napisem Marysia i zawieszką truskawki", label: "Marysia Strawberry" },
       { src: "/projects/bransoletki/2026/16.png", alt: "Różowa regulowana bransoletka z zawieszką truskawki", label: "Strawberry Charm" },
