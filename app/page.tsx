@@ -3,6 +3,9 @@
 import { useEffect, useMemo, useState } from "react";
 
 const projects = [
+  { id:"SCS-337", type:"Phone strapy crossbody", title:"Rose Denim", src:"/projects/crossbody/2026/37.png", alt:"Różowo-granatowy phone strap crossbody ułożony na jasnym kamiennym tle", colors:["#bd7f8f","#24457c","#8bc6d8"], note:"Pudrowy róż połączony z granatowym splotem i błękitnym mocowaniem — wygodny na co dzień i w podróży.", tone:"pink", fit:"contain" },
+  { id:"SCS-338", type:"Phone strapy crossbody", title:"Rose Denim - z butelką", src:"/projects/crossbody/2026/38.png", alt:"Różowo-granatowy strap crossbody przypięty do czarnej butelki", colors:["#bd7f8f","#24457c","#8bc6d8"], note:"Rose Denim pokazany jako praktyczny pasek do wygodnego noszenia butelki.", tone:"pink", fit:"contain" },
+  { id:"SCS-339", type:"Phone strapy crossbody", title:"Rose Denim - z telefonem", src:"/projects/crossbody/2026/39.png", alt:"Różowo-granatowy phone strap crossbody przypięty do telefonu", colors:["#bd7f8f","#24457c","#8bc6d8"], note:"Pełny widok splotu oraz sposobu przypięcia i noszenia telefonu.", tone:"pink", fit:"contain" },
   { id:"SCS-805", type:"Bransoletki", title:"Fruity Trio", src:"/projects/bransoletki/2026/19.png", alt:"Trzy różowe bransoletki z paracordu z zawieszkami truskawki, arbuza i wiśni", colors:["#d987a7","#cf2634","#287344"], note:"Trzy owocowe bransoletki — pamiątka wspólnego wyjazdu i chwil, które zostają na dłużej.", tone:"pink", fit:"cover" },
   { id:"SCS-804", type:"Bransoletki", title:"Dice Trio", src:"/projects/bransoletki/2026/18.png", alt:"Trzy czarno-białe męskie bransoletki z paracordu z kośćmi do gry", colors:["#111111","#f2f1ed","#8b8781"], note:"Trzy męskie bransoletki z kośćmi — pamiątka wspólnego wyjazdu i historii, która łączy.", tone:"cyan", fit:"cover" },
   { id:"SCS-336", type:"Phone strapy crossbody", title:"Purple Bloom", src:"/projects/crossbody/2026/36.png", alt:"Fioletowo-różowy phone strap crossbody z turkusowym splotem i kwiatowymi detalami", colors:["#6d36aa","#df3a9b","#07a3b2"], note:"Fioletowo-różowy strap z turkusowym splotem i kolorowymi, kwiatowymi detalami.", tone:"violet", fit:"contain" },
@@ -243,7 +246,8 @@ export default function Home(){
   },[filter,keyringCollection]);
   const crossbodyGroups=useMemo(()=>{
     if(filter!=="Phone strapy crossbody")return [];
-    return Object.entries(visible.reduce<Record<string,(typeof projects)[number][]>>((groups,project)=>{
+    const groupedOrder=[...visible.filter(project=>project.title.startsWith("Rose Denim")),...visible.filter(project=>!project.title.startsWith("Rose Denim"))];
+    return Object.entries(groupedOrder.reduce<Record<string,(typeof projects)[number][]>>((groups,project)=>{
       const name=project.title.split(" - ")[0];
       (groups[name]??=[]).push(project);
       return groups;

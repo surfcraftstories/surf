@@ -21,6 +21,9 @@ export const categories: CategoryContent[] = [
     price: "Orientacyjnie 25–35 PLN",
     features: ["Wybór kolorów", "Ręczne wykonanie", "Opcjonalne zawieszki"],
     images: [
+      { src: "/projects/crossbody/2026/37.png", alt: "Różowo-granatowy phone strap crossbody ułożony na jasnym kamiennym tle", label: "Rose Denim" },
+      { src: "/projects/crossbody/2026/38.png", alt: "Różowo-granatowy strap crossbody przypięty do czarnej butelki", label: "Z butelką" },
+      { src: "/projects/crossbody/2026/39.png", alt: "Różowo-granatowy phone strap crossbody przypięty do telefonu", label: "Z telefonem" },
       { src: "/projects/breloki/wszystkie/2026/22.png", alt: "Turkusowo-różowy brelok z kokardą, kwiatkiem, gwiazdką i literą M", label: "Blue Pink M" },
       { src: "/projects/breloki/wszystkie/2026/23.png", alt: "Różowo-kremowy brelok z kotkiem, gwiazdką i literą M", label: "Strawberry Cream" },
       { src: "/projects/breloki/wszystkie/2026/16.png", alt: "Brelok z paracordu wykonany ręcznie w Polsce", label: "Gotowy na prezent" },
