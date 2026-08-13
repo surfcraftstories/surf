@@ -21,8 +21,8 @@ export const categories: CategoryContent[] = [
     price: "Orientacyjnie 25–35 PLN",
     features: ["Wybór kolorów", "Ręczne wykonanie", "Opcjonalne zawieszki"],
     images: [
-      { src: "/projects/breloki/wszystkie/2026/01.jpg", alt: "Ręcznie wyplatany kolorowy brelok z paracordu Surfcraftstories", label: "Kolorowy splot" },
-      { src: "/projects/breloki/wszystkie/2026/07.png", alt: "Personalizowany brelok z paracordu z kolorowymi detalami", label: "Po Twojemu" },
+      { src: "/projects/breloki/wszystkie/2026/22.png", alt: "Turkusowo-różowy brelok z kokardą, kwiatkiem, gwiazdką i literą M", label: "Blue Pink M" },
+      { src: "/projects/breloki/wszystkie/2026/23.png", alt: "Różowo-kremowy brelok z kotkiem, gwiazdką i literą M", label: "Strawberry Cream" },
       { src: "/projects/breloki/wszystkie/2026/16.png", alt: "Brelok z paracordu wykonany ręcznie w Polsce", label: "Gotowy na prezent" },
     ],
   },
@@ -36,9 +36,10 @@ export const categories: CategoryContent[] = [
     price: "Orientacyjnie 35–45 PLN",
     features: ["Dopasowana długość", "Mocne mocowanie", "Kolory do wyboru"],
     images: [
-      { src: "/projects/phone-straps/2026/01.png", alt: "Kolorowy phone strap z paracordu do telefonu", label: "Codzienna wygoda" },
-      { src: "/projects/phone-straps/2026/13.png", alt: "Ręcznie wykonany phone strap Surfcraftstories", label: "Ręczny splot" },
-      { src: "/projects/phone-straps/2026/26.png", alt: "Personalizowany phone strap w wybranych kolorach", label: "Twój zestaw" },
+      { src: "/projects/phone-straps/2026/32.png", alt: "Turkusowo-żółty phone strap z kaczką i kołem ratunkowym", label: "Sunny Splash" },
+      { src: "/projects/phone-straps/2026/33.png", alt: "Różowo-zielony phone strap z kwiatową zawieszką", label: "Candy Bloom" },
+      { src: "/projects/phone-straps/2026/34.png", alt: "Czarno-fioletowy phone strap z napisem Tanz Blitz", label: "Tanz Blitz" },
+      { src: "/projects/phone-straps/2026/35.png", alt: "Miętowo-lawendowy phone strap z kwiatkiem i nutką", label: "Lavender Melody" },
     ],
   },
   {
@@ -51,9 +52,9 @@ export const categories: CategoryContent[] = [
     price: "Orientacyjnie 55–70 PLN",
     features: ["Długość na wymiar", "Noszenie crossbody", "Indywidualna paleta"],
     images: [
-      { src: "/projects/crossbody/2026/18.png", alt: "Kolorowy phone strap crossbody z paracordu noszony z telefonem", label: "Color Splash" },
-      { src: "/projects/crossbody/2026/21.png", alt: "Lawendowy phone strap crossbody Purple Dust", label: "Purple Dust" },
-      { src: "/projects/crossbody/2026/24.png", alt: "Długi phone strap crossbody ułożony z telefonem", label: "Pełny splot" },
+      { src: "/projects/crossbody/2026/36.png", alt: "Fioletowo-różowy phone strap crossbody z turkusowym splotem i kwiatowymi detalami", label: "Purple Bloom" },
+      { src: "/projects/crossbody/2026/31.png", alt: "Różowo-turkusowy phone strap crossbody noszony z telefonem z tyłu", label: "Z telefonem" },
+      { src: "/projects/crossbody/2026/35.png", alt: "Różowo-turkusowy phone strap crossbody noszony z telefonem z przodu", label: "Na sylwetce" },
     ],
   },
   {
@@ -66,9 +67,10 @@ export const categories: CategoryContent[] = [
     price: "Orientacyjnie 20–25 PLN",
     features: ["Rozmiar na wymiar", "Lekka i trwała", "Unikalne zestawienia"],
     images: [
-      { src: "/projects/bransoletki/01.png", alt: "Ręcznie wyplatana bransoletka z paracordu", label: "Ręczny splot" },
-      { src: "/projects/bransoletki/06.png", alt: "Kolorowa bransoletka z paracordu Surfcraftstories", label: "Kolor na rękę" },
-      { src: "/projects/bransoletki/11.png", alt: "Personalizowana bransoletka z paracordu", label: "Na wymiar" },
+      { src: "/projects/bransoletki/2026/18.png", alt: "Trzy czarno-białe męskie bransoletki z paracordu z kośćmi do gry", label: "Dice Trio" },
+      { src: "/projects/bransoletki/2026/15.png", alt: "Różowa bransoletka z napisem Marysia i zawieszką truskawki", label: "Marysia Strawberry" },
+      { src: "/projects/bransoletki/2026/16.png", alt: "Różowa regulowana bransoletka z zawieszką truskawki", label: "Strawberry Charm" },
+      { src: "/projects/bransoletki/2026/17.png", alt: "Różowo-turkusowa pleciona bransoletka z regulowanym zapięciem", label: "Pink Blue Braid" },
     ],
   },
   {
@@ -135,7 +137,7 @@ export function CategoryPage({ content }: { content: CategoryContent }) {
             </div>
           </div>
           <figure className="category-lead-image">
-            <img src={content.images[0].src} alt={content.images[0].alt} />
+            <img src={`${content.images[0].src}${content.images[0].src.includes("/2026/") ? "?v=2" : ""}`} alt={content.images[0].alt} />
             <figcaption><span>PRAWDZIWA REALIZACJA</span><b>01 / {content.images[0].label}</b></figcaption>
           </figure>
         </div>
@@ -152,7 +154,7 @@ export function CategoryPage({ content }: { content: CategoryContent }) {
         <div className="category-gallery">
           {content.images.map((image, index) => (
             <figure key={image.src} className={index === 0 ? "category-gallery-wide" : ""}>
-              <img src={image.src} alt={image.alt} loading={index === 0 ? "eager" : "lazy"} />
+              <img src={`${image.src}${image.src.includes("/2026/") ? "?v=2" : ""}`} alt={image.alt} loading={index === 0 ? "eager" : "lazy"} />
               <figcaption><span>0{index + 1}</span>{image.label}</figcaption>
             </figure>
           ))}
