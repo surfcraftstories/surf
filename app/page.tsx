@@ -246,7 +246,7 @@ export default function Home(){
       const name=project.title.split(" - ")[0];
       (groups[name]??=[]).push(project);
       return groups;
-    },{}));
+    },{})).map(([name,items])=>[name,items.map(project=>({...project,src:`${project.src}?v=2`}))] as const);
   },[filter,visible]);
   const displayedProjects=filter==="Breloki"&&!showAllKeyrings?visible.slice(0,6):visible;
   const matHandleItems=useMemo(()=>filter==="Inne"?visible.filter(project=>project.title.startsWith("Uchwyt na matę")):[],[filter,visible]);
