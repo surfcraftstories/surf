@@ -251,7 +251,7 @@ export default function Home(){
   },[filter,keyringCollection]);
   const crossbodyGroups=useMemo(()=>{
     if(filter!=="Phone strapy crossbody")return [];
-    const groupedOrder=[...visible.filter(project=>project.title.startsWith("Rose Denim")),...visible.filter(project=>!project.title.startsWith("Rose Denim"))];
+    const groupedOrder=[...visible.filter(project=>project.title.startsWith("Hard Beat")),...visible.filter(project=>project.title.startsWith("Rose Denim")),...visible.filter(project=>!project.title.startsWith("Hard Beat")&&!project.title.startsWith("Rose Denim"))];
     return Object.entries(groupedOrder.reduce<Record<string,(typeof projects)[number][]>>((groups,project)=>{
       const name=project.title.split(" - ")[0];
       (groups[name]??=[]).push(project);
