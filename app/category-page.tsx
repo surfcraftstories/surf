@@ -52,6 +52,10 @@ export const categories: CategoryContent[] = [
     price: "Orientacyjnie 55–70 PLN",
     features: ["Długość na wymiar", "Noszenie crossbody", "Indywidualna paleta"],
     images: [
+      { src: "/projects/crossbody/2026/45.png", alt: "Fioletowo-turkusowy phone strap crossbody Vaporwave Sunset z pomarańczowymi detalami ułożony obok telefonu", label: "Vaporwave Sunset" },
+      { src: "/projects/crossbody/2026/46.png", alt: "Phone strap crossbody Vaporwave Sunset noszony z przodu z telefonem", label: "Na sylwetce" },
+      { src: "/projects/crossbody/2026/47.png", alt: "Fioletowy strap crossbody Vaporwave Sunset z pomarańczowym karabińczykiem", label: "Detal" },
+      { src: "/projects/crossbody/2026/48.png", alt: "Phone strap crossbody Vaporwave Sunset noszony z tyłu z kluczami", label: "Z tyłu" },
       { src: "/projects/crossbody/2026/37.png", alt: "Różowo-granatowy phone strap crossbody ułożony na jasnym kamiennym tle", label: "Rose Denim" },
       { src: "/projects/crossbody/2026/38.png", alt: "Różowo-granatowy strap crossbody przypięty do czarnej butelki", label: "Z butelką" },
       { src: "/projects/crossbody/2026/39.png", alt: "Różowo-granatowy phone strap crossbody przypięty do telefonu", label: "Z telefonem" },
